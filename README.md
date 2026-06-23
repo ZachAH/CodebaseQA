@@ -14,6 +14,8 @@ It's built to run **completely free**: embeddings run on-device and the default
 LLM (Groq) needs no credit card, so there is nothing that can ever bill you.
 
 <!-- TODO: drop a screenshot or GIF of the app here — e.g. ![CodebaseQA](docs/screenshot.png) -->
+<img width="1541" height="719" alt="Screenshot 2026-06-23 at 10 46 57 AM" src="https://github.com/user-attachments/assets/eee2b863-bdd8-422e-8e97-d4679d1a8555" />
+
 
 ## Features
 
