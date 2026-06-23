@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* --- Spark: swimming-fin indexing animation --- */
+.spark-lane {
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(52, 211, 153, 0.18);
+}
+
+.spark-fin {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  color: #34d399; /* emerald-400 */
+  animation: spark-swim 2.6s linear infinite;
+}
+
+.spark-fin svg {
+  display: block;
+  animation: spark-bob 0.85s ease-in-out infinite;
+}
+
+/* the ripple trailing the fin */
+.spark-wake {
+  position: absolute;
+  bottom: 0;
+  width: 22px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(52, 211, 153, 0.35), transparent);
+  animation: spark-swim 2.6s linear infinite;
+  animation-delay: -0.12s;
+}
+
+@keyframes spark-swim {
+  0% {
+    left: -18px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes spark-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(-3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-fin,
+  .spark-fin svg,
+  .spark-wake {
+    animation: none;
+  }
+  .spark-fin {
+    left: 42%;
+  }
+}

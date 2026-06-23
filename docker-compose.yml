@@ -1,0 +1,20 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: codebaseqa-db
+    environment:
+      POSTGRES_DB: codebaseqa
+      POSTGRES_USER: codebaseqa
+      POSTGRES_PASSWORD: codebaseqa
+    ports:
+      - "5432:5432"
+    volumes:
+      - codebaseqa_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U codebaseqa -d codebaseqa"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  codebaseqa_pgdata:
